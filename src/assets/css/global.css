@@ -3,3 +3,19 @@ html,body,#app{
     margin: 0;
     height: 100%;
 }
+.el-submenu__title{
+    padding-left: 0 !important;
+}
+.el-breadcrumb{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.el-table{
+    margin-top: 10px;
+    font-size: 10px;}
+    .el-pagination{
+        margin-top: 15px;
+    }
+.el-dialog{
+    text-align: left;
+}
