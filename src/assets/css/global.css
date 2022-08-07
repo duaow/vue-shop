@@ -20,3 +20,7 @@ html,body,#app{
 .el-dialog,.el-row{
     text-align: left;
 }
+.el-cascader-panel{
+    height: 210px;
+    
+  }
