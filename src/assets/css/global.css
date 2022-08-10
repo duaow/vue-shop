@@ -24,3 +24,12 @@ html,body,#app{
     height: 210px;
     
   }
+  .el-steps{
+      text-align: left;
+      margin: 15px 0;
+      font-size: 12px;
+  }
+ .ql-editor{
+     min-height: 300px !important;
+ }
+ 
