@@ -1,17 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
-import Home from '../components/Home.vue'
-import Welcome from '../components/Welcome.vue'
-import User from '../components/users/User.vue'
-import Rights from '../components/power/Rights.vue'
-import Roles from '../components/power/Roles.vue'
-import Cate from '../components/goods/Cate.vue'
-import Params from '../components/goods/Params.vue'
-import Lists from '../components/goods/Lists.vue'
-import Add from '../components/goods/Add.vue'
-import Order from '../components/order/Order.vue'
-import Report from '../components/report/Report.vue'
 
 Vue.use(VueRouter)
 
@@ -25,44 +14,44 @@ const routes = [{
   component: Login
 }, {
   path: "/home",
-  component: Home,
+  component: () => import('../components/Home.vue'),
   redirect: '/welcome',
   children: [
     {
       path: '/welcome',
-      component: Welcome
+      component: () => import('../components/Welcome.vue')
     }, {
       path: '/users',
-      component: User
+      component: () => import('../components/users/User.vue')
     },
     {
       path: "/rights",
-      component: Rights
+      component: () => import('../components/power/Rights.vue')
     },
     {
       path: '/roles',
-      component: Roles
+      component: () => import('../components/power/Roles.vue')
     }, {
       path: '/categories',
-      component: Cate
+      component: () => import('../components/goods/Cate.vue')
     }, {
       path: '/params',
-      component: Params
+      component: () => import('../components/goods/Params.vue')
     },
     {
       path: '/goods',
-      component: Lists
+      component: () => import('../components/goods/Lists.vue')
     }, {
       path: '/goods/add',
-      component: Add
+      component: () => import('../components/goods/Add.vue')
     },
     {
       path: '/orders',
-      component: Order
+      component: () => import('../components/order/Order.vue')
     },
     {
       path: '/reports',
-      component: Report
+      component: () => import('../components/report/Report.vue')
     }
   ]
 }
@@ -70,6 +59,7 @@ const routes = [{
 ]
 
 const router = new VueRouter({
+  mode: 'hash',
   routes
 })
 router.beforeEach((to, from, next) => {
